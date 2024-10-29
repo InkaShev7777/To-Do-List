@@ -17,9 +17,24 @@ struct MainView: View {
                     .tabItem {
                         Label("Today", systemImage: "checkmark.square.fill")
                     }
+                
+                UpcomingView()
+                    .tabItem {
+                        Label("Upcoming", systemImage: "calendar")
+                    }
+                
+                InboxView()
+                    .tabItem {
+                        Label("Inbox", systemImage: "tray")
+                    }
+                
+                ProfileView()
+                    .tabItem {
+                        Label("Profile", systemImage: "person")
+                    }
                     
             }
-            .foregroundStyle(Color.theme.textColor)
+            .tint(Color.theme.textColor)
         } else {
             LoginView()
         }
