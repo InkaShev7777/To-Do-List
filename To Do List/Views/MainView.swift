@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct MainView: View {
+    @StateObject var viewModel = MainViewViewModel()
+    
     var body: some View {
-        LoginView()
+        if viewModel.isSignIn, !viewModel.currentUserId.isEmpty {
+            TabView {
+                TodayView()
+                    .tabItem {
+                        Label("Today", systemImage: "checkmark.square.fill")
+                    }
+                    
+            }
+            .foregroundStyle(Color.theme.textColor)
+        } else {
+            LoginView()
+        }
+        
     }
 }
 
 #Preview {
-    MainView()
+    MainView() 
 }
