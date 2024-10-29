@@ -8,9 +8,7 @@
 import SwiftUI
 
 struct RegistrationView: View {
-    @State var email = ""
-    @State var password = ""
-    @State var fullName = ""
+    @StateObject var viewModel = RegistrationViewViewModel()
     
     var body: some View {
         NavigationView {
@@ -29,7 +27,7 @@ struct RegistrationView: View {
                 
                 // Registration form
                 VStack(alignment: .center) {
-                    TextField("Full Name", text: $fullName)
+                    TextField("Full Name", text: $viewModel.fullName)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
@@ -37,7 +35,7 @@ struct RegistrationView: View {
                         .padding(.horizontal, 24)
                         .autocapitalization(.none)
                     
-                    TextField("Email Address", text: $email)
+                    TextField("Email Address", text: $viewModel.email)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
@@ -45,7 +43,7 @@ struct RegistrationView: View {
                         .padding(.horizontal, 24)
                         .autocapitalization(.none)
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.password)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
@@ -54,7 +52,7 @@ struct RegistrationView: View {
                         .autocapitalization(.none)
                     
                     Button {
-                        print("DEBUG: Login Button was presed")
+                        viewModel.registrate()
                     } label: {
                         Text("Create Account")
                             .font(.subheadline)

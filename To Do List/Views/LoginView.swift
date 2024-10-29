@@ -8,8 +8,7 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State var email = ""
-    @State var password = ""
+    @StateObject var viewModel = LoginViewViewModel()
     
     let buttonColor = UIColor(named: "ButtonsColorSet")
     
@@ -27,11 +26,10 @@ struct LoginView: View {
                         .font(.system(size: 20))
                 }
                 .padding(.top, 40)
-                
-                
+                 
                 // Login form
                 VStack(alignment: .center) {
-                    TextField("Email Address", text: $email)
+                    TextField("Email Address", text: $viewModel.email)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
@@ -39,16 +37,23 @@ struct LoginView: View {
                         .padding(.horizontal, 24)
                         .autocapitalization(.none)
                     
-                    SecureField("Password", text: $password)
+                    SecureField("Password", text: $viewModel.password)
                         .font(.subheadline)
                         .padding(12)
                         .background(Color(.systemGray6))
                         .cornerRadius(10)
                         .padding(.horizontal, 24)
                         .autocapitalization(.none)
+                    
+                    // Error Message
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundStyle(Color(.red))
+                            .font(.footnote)
+                    }
                     
                     Button {
-                        print("DEBUG: Login Button was presed")
+                        viewModel.login()
                     } label: {
                         Text("Log In")
                             .font(.subheadline)
