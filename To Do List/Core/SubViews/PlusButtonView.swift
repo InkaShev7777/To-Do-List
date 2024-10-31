@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct PlusButtonView: View {
+    
+    var action: () -> Void
+    
     var body: some View {
         
         VStack {
@@ -15,7 +18,7 @@ struct PlusButtonView: View {
             HStack {
                 Spacer()
                 Button {
-                    
+                    action()
                 } label: {
                     Image(systemName: "plus")
                         .font(.system(size: 24))
@@ -31,6 +34,6 @@ struct PlusButtonView: View {
     }
 }
 
-#Preview {
-    PlusButtonView()
-}
+//#Preview {
+//    PlusButtonView(action:  ())
+//}

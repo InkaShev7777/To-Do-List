@@ -8,8 +8,14 @@
 import SwiftUI
 
 struct TodayView: View {
-    
+    @StateObject var viewModel = TodayViewViewModel()
     @State var todayDate = TodayDate()
+    
+    private let userId: String
+    
+    init(userId: String) {
+        self.userId = userId
+    }
     
     var body: some View {
         NavigationView {
@@ -57,14 +63,17 @@ struct TodayView: View {
                     }
                     .scrollIndicators(.hidden)
                     
-                    PlusButtonView()
+                    PlusButtonView(action: viewModel.toggleShowItemView)
                 }
             }
             .padding()
         }
+        .sheet(isPresented: $viewModel.showNewItemView, content: {
+            NewItemView(newItemPressed: $viewModel.showNewItemView )
+        })
     }
 }
 
 #Preview {
-    TodayView()
+    TodayView(userId: "")
 }
