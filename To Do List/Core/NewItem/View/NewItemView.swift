@@ -40,8 +40,12 @@ struct NewItemView: View {
                     .tint(Color.theme.textColor)
                 //Button
                 Button {
-                    viewModel.save()
-                    newItemPressed = false
+                    if viewModel.canSave {
+                        viewModel.save()
+                        newItemPressed = false
+                    } else {
+                        viewModel.showAlert = true
+                    }
                 } label: {
                     Text("Save")
                         .fontWeight(.semibold)
@@ -51,6 +55,10 @@ struct NewItemView: View {
                         .cornerRadius(10)
                         .padding()
                 }
+            }
+            .alert(isPresented: $viewModel.showAlert) {
+                Alert(title: Text("Error"),
+                      message: Text("Please fill in all fields and select date that is today or newer"))
             }
         }
         .padding(.horizontal)
