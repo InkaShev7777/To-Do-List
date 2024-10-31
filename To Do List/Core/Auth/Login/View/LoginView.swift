@@ -1,5 +1,5 @@
 //
-//  RegistrationView.swift
+//  LoginView.swift
 //  To Do List
 //
 //  Created by Ilya Schevchenko on 29.10.2024.
@@ -7,8 +7,10 @@
 
 import SwiftUI
 
-struct RegistrationView: View {
-    @StateObject var viewModel = RegistrationViewViewModel()
+struct LoginView: View {
+    @StateObject var viewModel = LoginViewViewModel()
+    
+    let buttonColor = UIColor(named: "ButtonsColorSet")
     
     var body: some View {
         NavigationView {
@@ -19,22 +21,14 @@ struct RegistrationView: View {
                         .fontWeight(.semibold)
                         .font(.system(size: 50))
                     
-                    Text("Start organizing todos")
+                    Text("Get this done")
                         .fontWeight(.regular)
                         .font(.system(size: 20))
                 }
                 .padding(.top, 40)
-                
-                // Registration form
+                 
+                // Login form
                 VStack(alignment: .center) {
-                    TextField("Full Name", text: $viewModel.fullName)
-                        .font(.subheadline)
-                        .padding(12)
-                        .background(Color(.systemGray6))
-                        .cornerRadius(10)
-                        .padding(.horizontal, 24)
-                        .autocapitalization(.none)
-                    
                     TextField("Email Address", text: $viewModel.email)
                         .font(.subheadline)
                         .padding(12)
@@ -51,10 +45,17 @@ struct RegistrationView: View {
                         .padding(.horizontal, 24)
                         .autocapitalization(.none)
                     
+                    // Error Message
+                    if !viewModel.errorMessage.isEmpty {
+                        Text(viewModel.errorMessage)
+                            .foregroundStyle(Color(.red))
+                            .font(.footnote)
+                    }
+                    
                     Button {
-                        viewModel.registrate()
+                        Task{ try await viewModel.login()}
                     } label: {
-                        Text("Create Account")
+                        Text("Log In")
                             .font(.subheadline)
                             .fontWeight(.semibold)
                             .foregroundStyle(Color.theme.buttonTextColor)
@@ -65,12 +66,18 @@ struct RegistrationView: View {
                     }
                 }
                 .padding()
+                
+                //Create Account
+                VStack(alignment: .center) {
+                    NavigationLink("Create Account", destination: RegistrationView())
+                        .font(.footnote)
+                        .foregroundStyle(Color.theme.textColor)
+                }
             }
         }
-        
     }
 }
 
 #Preview {
-    RegistrationView()
+    LoginView()
 }
