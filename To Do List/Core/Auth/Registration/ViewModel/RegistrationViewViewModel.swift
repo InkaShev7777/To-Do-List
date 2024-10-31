@@ -9,6 +9,7 @@ import Foundation
 import FirebaseAuth
 import FirebaseFirestore
 
+@MainActor
 class RegistrationViewViewModel: ObservableObject {
     @Published var fullName = ""
     @Published var email = ""
@@ -16,47 +17,12 @@ class RegistrationViewViewModel: ObservableObject {
     
     init() {}
     
-    func registrate() {
-        guard validate() else {
-            return
-        }
+    func registrate() async throws {
         
-        Auth.auth().createUser(withEmail: email, password: password) { [ weak self ] result, error in
-            guard let userId = result?.user.uid else {
-                return
-            }
-            
-            self?.insertUserRecord(id: userId)
-        }
-    }
-    
-    private func insertUserRecord(id: String) {
-        let newUser = User(id: id,
-                           name: fullName,
-                           email: email,
-                           joined: Date().timeIntervalSince1970)
+        try await AuthService.shared.createUser(email: email, password: password, username: fullName)
         
-        let db = Firestore.firestore()
-        db.collection("users")
-            .document(id)
-            .setData(newUser.asDictionary())
-    }
-    
-    private func validate() -> Bool {
-        guard !fullName.trimmingCharacters(in: .whitespaces).isEmpty,
-              !email.trimmingCharacters(in: .whitespaces).isEmpty,
-              !password.trimmingCharacters(in: .whitespaces).isEmpty else {
-            return false
-        }
-        
-        guard email.contains("@") && email.contains(".") else {
-            return false
-        }
-        
-        guard password.count >= 6 else {
-            return false
-        }
-        
-        return true
+        email = ""
+        password = ""
+        fullName = ""
     }
 }

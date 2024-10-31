@@ -8,40 +8,13 @@
 import SwiftUI
 
 struct MainView: View {
-    @StateObject var viewModel = MainViewViewModel()
-    
     var body: some View {
-        if viewModel.isSignIn, !viewModel.currentUserId.isEmpty {
-            mainView
-        } else {
-            LoginView()
-        }
-    }
-    
-    @ViewBuilder
-    var mainView: some View {
-        TabView {
-            TodayView(userId: viewModel.currentUserId)
-                .tabItem {
-                    Label("Today", systemImage: "checkmark.square.fill")
-                }
-            
-            UpcomingView()
-                .tabItem {
-                    Label("Upcoming", systemImage: "calendar")
-                }
-            
-            InboxView()
-                .tabItem {
-                    Label("Inbox", systemImage: "tray")
-                }
-            
-            ProfileView()
-                .tabItem {
-                    Label("Profile", systemImage: "person")
-                }
-        }
-        .tint(Color.theme.textColor)
+//        if AuthService.shared.userSession != nil {
+//            HomeView()
+//        } else {
+//            LoginView()
+//        }
+        HomeView()
     }
 }
 

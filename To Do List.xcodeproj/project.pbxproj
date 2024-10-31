@@ -16,6 +16,10 @@
 		C1731B192CD38FA600BB8028 /* InboxViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B182CD38FA600BB8028 /* InboxViewViewModel.swift */; };
 		C1731B1E2CD3931200BB8028 /* NewItemView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B1D2CD3931200BB8028 /* NewItemView.swift */; };
 		C1731B202CD3952700BB8028 /* NewItemViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B1F2CD3952700BB8028 /* NewItemViewViewModel.swift */; };
+		C1731B222CD3BD2900BB8028 /* ToDoListItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B212CD3BD2900BB8028 /* ToDoListItem.swift */; };
+		C1731B252CD3C4B600BB8028 /* AuthService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B242CD3C4B600BB8028 /* AuthService.swift */; };
+		C1731B282CD3C51500BB8028 /* UserService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B272CD3C51500BB8028 /* UserService.swift */; };
+		C1731B2C2CD3D12E00BB8028 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1731B2B2CD3D12E00BB8028 /* HomeView.swift */; };
 		C1FA6C662CD0E1C60074EB96 /* To_Do_ListApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA6C652CD0E1C60074EB96 /* To_Do_ListApp.swift */; };
 		C1FA6C682CD0E1C60074EB96 /* MainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1FA6C672CD0E1C60074EB96 /* MainView.swift */; };
 		C1FA6C6A2CD0E1C70074EB96 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C1FA6C692CD0E1C70074EB96 /* Assets.xcassets */; };
@@ -70,6 +74,10 @@
 		C1731B182CD38FA600BB8028 /* InboxViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InboxViewViewModel.swift; sourceTree = "<group>"; };
 		C1731B1D2CD3931200BB8028 /* NewItemView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemView.swift; sourceTree = "<group>"; };
 		C1731B1F2CD3952700BB8028 /* NewItemViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewItemViewViewModel.swift; sourceTree = "<group>"; };
+		C1731B212CD3BD2900BB8028 /* ToDoListItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ToDoListItem.swift; sourceTree = "<group>"; };
+		C1731B242CD3C4B600BB8028 /* AuthService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthService.swift; sourceTree = "<group>"; };
+		C1731B272CD3C51500BB8028 /* UserService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserService.swift; sourceTree = "<group>"; };
+		C1731B2B2CD3D12E00BB8028 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		C1FA6C622CD0E1C60074EB96 /* To Do List.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "To Do List.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C1FA6C652CD0E1C60074EB96 /* To_Do_ListApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = To_Do_ListApp.swift; sourceTree = "<group>"; };
 		C1FA6C672CD0E1C60074EB96 /* MainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainView.swift; sourceTree = "<group>"; };
@@ -129,6 +137,7 @@
 		C1731AFE2CD38DAE00BB8028 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
+				C1731B232CD3C4A900BB8028 /* Service */,
 				C1731B002CD38DBA00BB8028 /* Registration */,
 				C1731AFF2CD38DB400BB8028 /* Login */,
 			);
@@ -335,6 +344,38 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		C1731B232CD3C4A900BB8028 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				C1731B242CD3C4B600BB8028 /* AuthService.swift */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		C1731B262CD3C50800BB8028 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C1731B272CD3C51500BB8028 /* UserService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		C1731B292CD3D12200BB8028 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				C1731B2A2CD3D12600BB8028 /* View */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		C1731B2A2CD3D12600BB8028 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				C1731B2B2CD3D12E00BB8028 /* HomeView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		C1FA6C592CD0E1C60074EB96 = {
 			isa = PBXGroup;
 			children = (
@@ -358,6 +399,7 @@
 				C1FA6C812CD0E48B0074EB96 /* Core */,
 				C1FA6C832CD0E4990074EB96 /* Models */,
 				C1FA6C892CD104EF0074EB96 /* Extensions */,
+				C1731B262CD3C50800BB8028 /* Services */,
 				C1FA6C6B2CD0E1C70074EB96 /* Preview Content */,
 			);
 			path = "To Do List";
@@ -374,6 +416,7 @@
 		C1FA6C812CD0E48B0074EB96 /* Core */ = {
 			isa = PBXGroup;
 			children = (
+				C1731B292CD3D12200BB8028 /* Home */,
 				C1731AFE2CD38DAE00BB8028 /* Auth */,
 				C1731B052CD38E1C00BB8028 /* Main */,
 				C1731B082CD38E4D00BB8028 /* Today */,
@@ -390,6 +433,7 @@
 			isa = PBXGroup;
 			children = (
 				C1FA6CCC2CD120880074EB96 /* User.swift */,
+				C1731B212CD3BD2900BB8028 /* ToDoListItem.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -525,7 +569,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				C1FA6C682CD0E1C60074EB96 /* MainView.swift in Sources */,
+				C1731B2C2CD3D12E00BB8028 /* HomeView.swift in Sources */,
 				C1FA6C8F2CD115AA0074EB96 /* LoginViewViewModel.swift in Sources */,
+				C1731B282CD3C51500BB8028 /* UserService.swift in Sources */,
 				C1FA6CD12CD123D00074EB96 /* MainViewViewModel.swift in Sources */,
 				C1FA6CDA2CD14F6B0074EB96 /* PlusButtonView.swift in Sources */,
 				C1731B192CD38FA600BB8028 /* InboxViewViewModel.swift in Sources */,
@@ -543,10 +589,12 @@
 				C1FA6C8B2CD104F90074EB96 /* Color.swift in Sources */,
 				C1731AF72CD3849A00BB8028 /* EmptyReminderLabel.swift in Sources */,
 				C1FA6CD32CD1270C0074EB96 /* TodayView.swift in Sources */,
+				C1731B252CD3C4B600BB8028 /* AuthService.swift in Sources */,
 				C1731B1E2CD3931200BB8028 /* NewItemView.swift in Sources */,
 				C1731B152CD38F8800BB8028 /* ProfileViewViewModel.swift in Sources */,
 				C1731B202CD3952700BB8028 /* NewItemViewViewModel.swift in Sources */,
 				C1FA6C662CD0E1C60074EB96 /* To_Do_ListApp.swift in Sources */,
+				C1731B222CD3BD2900BB8028 /* ToDoListItem.swift in Sources */,
 				C1731AF52CD3848D00BB8028 /* FillReminderLabel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

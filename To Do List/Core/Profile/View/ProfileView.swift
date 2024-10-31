@@ -11,7 +11,11 @@ struct ProfileView: View {
     var body: some View {
         NavigationView {
             VStack {
-                
+                Button {
+                    AuthService.shared.signout()
+                } label: {
+                    Text("Sign Out")
+                }
             }
             .navigationTitle("Profile")
         }
