@@ -52,7 +52,7 @@ struct RegistrationView: View {
                         .autocapitalization(.none)
                     
                     Button {
-                        viewModel.registrate()
+                        Task{ try await viewModel.registrate() }
                     } label: {
                         Text("Create Account")
                             .font(.subheadline)

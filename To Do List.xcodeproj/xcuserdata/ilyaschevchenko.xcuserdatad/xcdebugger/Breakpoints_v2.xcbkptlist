@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "B11F99B8-A688-4798-B5E7-31358B826A61"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DDB4A748-0AF3-4BB5-9974-8F32858FB512"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "To Do List/Core/Auth/Registration/ViewModel/RegistrationViewViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "20"
+            endingLineNumber = "20"
+            landmarkName = "registrate()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "DDB4A748-0AF3-4BB5-9974-8F32858FB512 - e0690cbe1970667a"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_List.RegistrationViewViewModel.registrate() -&gt; ()"
+                  moduleName = "To Do List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilyaschevchenko/Documents/DeveloperApplications/SwiftApplication/To%20Do%20List/To%20Do%20List/Core/Auth/Registration/ViewModel/RegistrationViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "44">
+               </Location>
+               <Location
+                  uuid = "DDB4A748-0AF3-4BB5-9974-8F32858FB512 - c25deba05bab8888"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "To_Do_List.RegistrationViewViewModel.registrate() async throws -&gt; ()"
+                  moduleName = "To Do List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilyaschevchenko/Documents/DeveloperApplications/SwiftApplication/To%20Do%20List/To%20Do%20List/Core/Auth/Registration/ViewModel/RegistrationViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "72">
+               </Location>
+               <Location
+                  uuid = "DDB4A748-0AF3-4BB5-9974-8F32858FB512 - ef251f59fd4d0264"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for To_Do_List.RegistrationViewViewModel.registrate() async throws -&gt; ()"
+                  moduleName = "To Do List"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/ilyaschevchenko/Documents/DeveloperApplications/SwiftApplication/To%20Do%20List/To%20Do%20List/Core/Auth/Registration/ViewModel/RegistrationViewViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "20"
+                  endingLineNumber = "20"
+                  offsetFromSymbolStart = "32">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

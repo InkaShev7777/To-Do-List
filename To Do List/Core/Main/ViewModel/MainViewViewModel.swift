@@ -8,7 +8,9 @@
 import Foundation
 import FirebaseAuth
 
+@MainActor
 class MainViewViewModel: ObservableObject {
+    var uid = AuthService.shared.userSession
     @Published var currentUserId: String = ""
     private var hendler: AuthStateDidChangeListenerHandle?
     

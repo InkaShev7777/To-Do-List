@@ -53,7 +53,7 @@ struct LoginView: View {
                     }
                     
                     Button {
-                        viewModel.login()
+                        Task{ try await viewModel.login()}
                     } label: {
                         Text("Log In")
                             .font(.subheadline)
